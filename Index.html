@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rathore World</title>
+
+<style>
+
+body{
+font-family:Arial;
+margin:0;
+background:#f4f4f4;
+}
+
+header{
+background:#800000;
+color:white;
+padding:15px;
+text-align:center;
+}
+
+nav{
+background:#333;
+padding:10px;
+text-align:center;
+}
+
+nav button{
+background:#ffcc00;
+border:none;
+padding:10px;
+margin:5px;
+font-weight:bold;
+}
+
+.section{
+display:none;
+padding:15px;
+}
+
+.card{
+background:white;
+padding:10px;
+margin:10px;
+border-radius:10px;
+box-shadow:0 0 5px gray;
+}
+
+img{
+width:100%;
+max-width:300px;
+border-radius:10px;
+}
+
+footer{
+background:#800000;
+color:white;
+text-align:center;
+padding:10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h1>Rathore World</h1>
+<p>Owner: Palak Nandani</p>
+</header>
+
+<nav>
+
+<button onclick="show('home')">Home</button>
+
+<button onclick="show('kings')">Kings</button>
+
+<button onclick="show('books')">Books</button>
+
+<button onclick="show('contact')">Contact</button>
+
+<button onclick="show('reviews')">Reviews</button>
+
+</nav>
+
+<!-- HOME -->
+
+<div id="home" class="section" style="display:block">
+
+<div class="card">
+
+<h2>Welcome to Rathore World</h2>
+
+<p>Explore full life stories of Rajasthan kings.</p>
+
+</div>
+
+</div>
+
+<!-- KINGS -->
+
+<div id="kings" class="section">
+
+<div class="card" onclick="detail('Maharana Pratap','1540','1597','Great king of Mewar. Fought Battle of Haldighati.')">
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Maharana_Pratap.jpg">
+
+<h3>Maharana Pratap</h3>
+
+</div>
+
+
+<div class="card" onclick="detail('Prithviraj Chauhan','1166','1192','King of Ajmer and Delhi. Great warrior.')">
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/36/Prithviraj_Chauhan.jpg">
+
+<h3>Prithviraj Chauhan</h3>
+
+</div>
+
+
+<div class="card" onclick="detail('Rana Sanga','1482','1528','Powerful Rajput ruler.')">
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Rana_Sanga.jpg/800px-Rana_Sanga.jpg">
+
+<h3>Rana Sanga</h3>
+
+</div>
+
+
+<div class="card" onclick="detail('Rao Jodha','1416','1489','Founder of Jodhpur.')">
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Rao_Jodha.jpg/800px-Rao_Jodha.jpg">
+
+<h3>Rao Jodha</h3>
+
+</div>
+
+<!-- Add more kings same way -->
+
+</div>
+
+<!-- DETAIL -->
+
+<div id="detail" class="section">
+
+<button onclick="show('kings')">Back</button>
+
+<div id="detailText"></div>
+
+</div>
+
+<!-- BOOKS -->
+
+<div id="books" class="section">
+
+<div class="card">
+
+<h3>Rajasthan Kings Book</h3>
+
+<button onclick="readBook()">Read</button>
+
+<button onclick="buyBook()">Buy ₹199</button>
+
+<p id="bookText" style="display:none">
+
+This book contains full history of Rajasthan kings from birth to death.
+
+</p>
+
+</div>
+
+</div>
+
+<!-- CONTACT -->
+
+<div id="contact" class="section">
+
+<div class="card">
+
+<h2>Contact</h2>
+
+<p>Owner: Palak Nandani</p>
+
+<p>Phone: 9929039976</p>
+
+<p>Email: rathoreworld@gmail.com</p>
+
+</div>
+
+</div>
+
+<!-- REVIEWS -->
+
+<div id="reviews" class="section">
+
+<div class="card">
+
+<h2>Customer Reviews</h2>
+
+<p>⭐⭐⭐⭐⭐ Excellent website</p>
+
+<p>⭐⭐⭐⭐ Very informative</p>
+
+<p>⭐⭐⭐⭐⭐ Best Rajasthan history</p>
+
+</div>
+
+</div>
+
+<footer>
+
+Contact: 9929039976
+
+</footer>
+
+<script>
+
+function show(id){
+
+document.getElementById('home').style.display='none';
+document.getElementById('kings').style.display='none';
+document.getElementById('books').style.display='none';
+document.getElementById('contact').style.display='none';
+document.getElementById('reviews').style.display='none';
+document.getElementById('detail').style.display='none';
+
+document.getElementById(id).style.display='block';
+
+}
+
+function detail(name,birth,death,info){
+
+document.getElementById('detailText').innerHTML=
+
+"<h2>"+name+"</h2>"+
+
+"<p>Birth: "+birth+"<br>Death: "+death+"<br>"+info+"</p>";
+
+show('detail');
+
+}
+
+function readBook(){
+
+document.getElementById('bookText').style.display='block';
+
+}
+
+function buyBook(){
+
+alert("Book Purchased Successfully");
+
+}
+
+</script>
+
+</body>
+  </html>
